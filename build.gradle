@@ -22,10 +22,13 @@ repositories {
 
 dependencies {
     compile project (':../processing/core')
+    compile project (':../p5-Helpers')
 }
 
 sourceCompatibility = 1.7
+targetCompatibility = 1.7
 version = '1.0'
+
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.2.1'
