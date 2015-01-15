@@ -29,6 +29,11 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 version = '1.0'
 
+idea {
+	module {
+		name = 'p5-Spatial'
+	}
+}
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.2.1'
