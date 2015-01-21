@@ -6,16 +6,6 @@ import processing.core.PGraphics;
 import processing.core.PVector;
 
 public class Camera extends EuclideanSpaceObject{
-    MomentumVector momentum;
-    MomentumYawPitchRoll rotMomentum;
-
-    public void update() {
-        translateWRTObjectCoords(momentum.getValue());
-        rotate(rotMomentum.getValue());
-
-        momentum.friction();
-        rotMomentum.friction();
-    }
 
     public void camera(PGraphics pG) {
         PVector cam = getLocation();
@@ -30,6 +20,9 @@ public class Camera extends EuclideanSpaceObject{
                 lookat.x, lookat.y, lookat.z,
                 up.x, up.y, up.z
         );
+
+        float fov = PI / 2.8f;
+        pG.perspective(fov, (float)pG.width / (float)pG.height, .01f, 10000.0f);
 
 //        pG.scale(-1, 1);
     }
