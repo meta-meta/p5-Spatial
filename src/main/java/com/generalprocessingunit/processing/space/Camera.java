@@ -7,6 +7,8 @@ import processing.core.PVector;
 
 public class Camera extends EuclideanSpaceObject{
 
+    public float fov = PI / 2.8f;
+
     public void camera(PGraphics pG) {
         PVector cam = getLocation();
 
@@ -21,7 +23,6 @@ public class Camera extends EuclideanSpaceObject{
                 up.x, up.y, up.z
         );
 
-        float fov = PI / 2.8f;
         pG.perspective(fov, (float)pG.width / (float)pG.height, .01f, 10000.0f);
 
 //        pG.scale(-1, 1);
