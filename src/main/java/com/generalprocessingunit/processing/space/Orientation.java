@@ -18,6 +18,14 @@ public class Orientation {
         roll(rotation.roll());
     }
 
+    public Orientation (Quaternion quaternion) {
+        this();
+        orientation = quaternion.mult(orientation);
+        xAxis = quaternion.rotateVector(xAxis);
+        yAxis = quaternion.rotateVector(yAxis);
+        zAxis = quaternion.rotateVector(zAxis);
+    }
+
     private Orientation (Quaternion orientation, PVector xAxis, PVector yAxis, PVector zAxis) {
         this();
         this.orientation = new Quaternion(orientation.w, orientation.x, orientation.y, orientation.z);
