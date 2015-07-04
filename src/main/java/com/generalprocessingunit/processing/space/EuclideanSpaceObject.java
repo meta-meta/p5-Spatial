@@ -153,6 +153,10 @@ public class EuclideanSpaceObject extends MathsHelpers {
         translate(getLocationRelativeToThisObject(translation));
     }
 
+    public void translateObjWRTObjectCoords(PVector translation, EuclideanSpaceObject obj) {
+        obj.translate(getLocationRelativeToThisObject(translation));
+    }
+
     public void translate(PVector translation) {
         location.add(translation);
 
